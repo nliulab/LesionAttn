@@ -38,7 +38,18 @@ For CUDA builds of PyTorch, install the correct `torch` and `torchvision` wheels
 
 ### 2. Prepare The Datasets
 
-Create this directory structure under `LesionAttn/`:
+Download the prepared LesionAttn data package from Kaggle:
+
+- https://www.kaggle.com/datasets/mingchengzhu/lesionattn-data
+
+You can download it manually from the Kaggle page, or use the Kaggle CLI after configuring your Kaggle API token:
+
+```bash
+mkdir -p data
+kaggle datasets download -d mingchengzhu/lesionattn-data -p data --unzip
+```
+
+After extraction, the dataset should have this structure under `LesionAttn/`:
 
 ```text
 data/
@@ -56,12 +67,6 @@ data/
       ...
     BCN20000_metadata.csv
 ```
-We provided the datasets on the [Kaggle](). But you can also download them from the original dataset.
-
-HAM10000 can be downloaded from the ISIC challenge data page or the HAM10000 Harvard Dataverse record:
-
-- https://challenge.isic-archive.com/data/
-- https://doi.org/10.7910/DVN/DBW86T
 
 The HAM loader expects:
 
